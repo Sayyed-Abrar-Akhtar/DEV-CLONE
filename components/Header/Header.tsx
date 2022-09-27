@@ -4,7 +4,7 @@ import Search from '../Search/Search';
 
 const Header: React.FC = () => {
   return (
-    <header className='w-full h-14 shadow-md fixed top-0 flex items-center justify-between px-4'>
+    <header className='w-full h-14 bg-white shadow-md fixed top-0 flex items-center justify-between px-4 z-50'>
       <div className='flex items-center space-x-5'>
         <Link href='/'>
           <a className='uppercase text-lg font-bold text-white bg-black px-[6px] py-[4px] rounded'>

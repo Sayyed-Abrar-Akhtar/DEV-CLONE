@@ -19,7 +19,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/WithPagination/WithPagination.tsx"
+    "components/WithPagination/WithPagination.tsx",
+    "redux/actions/blogActions.js",
+    "redux/constants/blogConstants.js"
   ],
   "exclude": ["node_modules"]
 }

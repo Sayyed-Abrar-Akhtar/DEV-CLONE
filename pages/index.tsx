@@ -1,6 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
-import Blogs from '../components/Blogs/Blogs';
+
 import Layout from '../components/Layout/Layout';
+import Paginate from '../components/Pagination/Paginate';
 import { Blog } from '../types';
 
 type Props = {
@@ -8,12 +9,15 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ blogs }: Props) => {
+  console.log(blogs);
   return (
     <Layout
       title='Dev Community'
       description="DEV Community is a community of amazing developers. We're a place where coders share, stay up-to-date and grow their careers."
     >
-      <Blogs data={blogs} />
+      <>
+        <Paginate blogs={blogs} blogsPerPage={10} />
+      </>
     </Layout>
   );
 };
@@ -28,6 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       blogs,
     },
+    revalidate: 60,
   };
 };
 

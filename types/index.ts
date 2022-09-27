@@ -12,4 +12,15 @@ export interface Blog {
   id: string;
   title: string;
   description: string;
+  cover_image: string;
+  slug: string;
+  readable_publish_date: string;
+  positive_reactions_count: number;
+  comments_count: number;
+  reading_time_minutes: number;
+  user: {
+    name: string;
+    profile_image: string;
+  };
+  tag_list: [string];
 }

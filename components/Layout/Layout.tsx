@@ -18,7 +18,7 @@ const Layout: React.FC<Props> = ({ title, description, children }: Props) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
-      <main className='mt-14'>{children}</main>
+      <main className='mt-14 p-4 bg-[#f5f5f5] min-h-[100vh]'>{children}</main>
 
       <footer className=''></footer>
     </>
