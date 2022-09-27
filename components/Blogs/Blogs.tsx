@@ -7,7 +7,7 @@ interface Props {
 
 const Blogs: React.FC<Props> = ({ data }: Props) => {
   return (
-    <div className='my-10 mx-20'>
+    <div className='mx-0 my-10 md:mx-20'>
       <>
         {data.map((blog, idx) =>
           idx === 0 ? (

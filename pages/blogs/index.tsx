@@ -1,17 +1,17 @@
-import type { GetStaticProps, NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
+import React from 'react';
+import Layout from '../../components/Layout/Layout';
+import Paginate from '../../components/Pagination/Paginate';
+import { Blog } from '../../types';
 
-import Layout from '../components/Layout/Layout';
-import Paginate from '../components/Pagination/Paginate';
-import { Blog } from '../types';
-
-type Props = {
+interface Props {
   blogs: Blog[];
-};
+}
 
-const Home: NextPage<Props> = ({ blogs }: Props) => {
+const BlogsPage: NextPage<Props> = ({ blogs }: Props) => {
   return (
     <Layout
-      title='Dev Community'
+      title='DEV | All Blogs'
       description="DEV Community is a community of amazing developers. We're a place where coders share, stay up-to-date and grow their careers."
     >
       <Paginate blogs={blogs} blogsPerPage={10} />
@@ -31,4 +31,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Home;
+export default BlogsPage;

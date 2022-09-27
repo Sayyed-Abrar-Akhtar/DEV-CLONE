@@ -40,8 +40,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch('https://dev.to/api/articles');
   const blogs: Blog[] = await res.json();
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
       blogs,

@@ -13,11 +13,18 @@ const Header: React.FC = () => {
         </Link>
         <Search />
       </div>
-      <Link href='/auth/signin'>
-        <a className='text-sm md:text-lg text-gray-700 hover:bg-[rgb(235,236,252)] hover:text-[rgb(59,73,223)] md:px-4 md:py-2 px-2 py-1 rounded hover:underline'>
-          Sign in
-        </a>
-      </Link>
+      <div className='flex items-center justify-end'>
+        <Link href='/blogs'>
+          <a className='hidden md:block text-sm md:text-lg text-gray-700 hover:bg-[rgb(235,236,252)] hover:text-[rgb(59,73,223)] md:px-4 md:py-2 px-2 py-1 rounded hover:underline'>
+            Blogs
+          </a>
+        </Link>
+        <Link href='/auth/login'>
+          <a className='text-sm md:text-lg text-gray-700 hover:bg-[rgb(235,236,252)] hover:text-[rgb(59,73,223)] md:px-4 md:py-2 px-2 py-1 rounded hover:underline'>
+            Log in
+          </a>
+        </Link>
+      </div>
     </header>
   );
 };

@@ -28,9 +28,9 @@ const BlogList: React.FC<Props> = ({ blog, showCoverImg = false }: Props) => {
           )
         </div>
       )}
-      <div className='flex p-6'>
-        <div className='w-[10%] flex justify-end'>
-          <div className='relative w-10 h-10 mr-2 overflow-hidden rounded-full border-[1px] shadow-sm'>
+      <div className='flex py-6 px-2 md:p-6'>
+        <div className='w-[12%] md:w-[10%] flex justify-end'>
+          <div className='relative w-8 h-8 md:w-10 md:h-10 mr-2 overflow-hidden rounded-full border-[1px] shadow-sm'>
             {blog.user.profile_image && (
               <Image
                 src={blog.user.profile_image}
@@ -40,13 +40,13 @@ const BlogList: React.FC<Props> = ({ blog, showCoverImg = false }: Props) => {
             )}
           </div>
         </div>
-        <div className='w-[90%]'>
+        <div className='w-[88%] md:w-[90%]'>
           <div>
             <h4 className='font-semibold text-sm '>{blog.user.name}</h4>
             <p className='text-xs'>{blog.readable_publish_date}</p>
           </div>
           <div>
-            <Link href={`/blog/${blog.slug}`}>
+            <Link href={`/blogs/${blog.slug}`}>
               <a>
                 <h3 className='text-2xl leading-5 font-bold my-5'>
                   {blog.title}
@@ -54,7 +54,7 @@ const BlogList: React.FC<Props> = ({ blog, showCoverImg = false }: Props) => {
               </a>
             </Link>
           </div>
-          <div className='flex space-x-5 mb-7'>
+          <div className='flex flex-wrap space-x-5 mb-7'>
             {blog.tag_list.map((tags, idx) => (
               <p key={tags + idx * Date.now()} className='text-gray-700'>
                 <span>#</span>
@@ -68,13 +68,18 @@ const BlogList: React.FC<Props> = ({ blog, showCoverImg = false }: Props) => {
                 <span>
                   <RiHeart2Line />
                 </span>
-                <p>{blog.positive_reactions_count} reactions</p>
+                <p>
+                  {blog.positive_reactions_count}{' '}
+                  <span className='hidden md:inline-block'>reactions</span>
+                </p>
               </div>
               <div className='flex items-center space-x-2'>
                 <span>
                   <RiChat1Line />
                 </span>
-                <p>{6} comments</p>
+                <p>
+                  {6} <span className='hidden md:inline-block'>comments</span>
+                </p>
               </div>
             </div>
             <div className='flex items-center space-x-2'>
